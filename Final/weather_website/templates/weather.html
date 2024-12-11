@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Weather</title>
+</head>
+<body>
+    <h1>현재 위치: {{ location }}</h1>
+    <h2>현재 기온: {{ current_temp }}°C</h2>
+    <p>날씨: {{ current_weather }}</p>
+    <p>오늘 최저/최고 기온: {{ today_min }}°C / {{ today_max }}°C</p>
+
+    {% if alert %}
+    <p>{{ alert }}</p>
+    {% endif %}
+
+    <h3>7일간의 예보</h3>
+    <ul>
+        {% for day in daily_forecast %}
+        <li>{{ day.weather[0].description }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
