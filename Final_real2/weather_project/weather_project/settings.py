@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-o-j4mwdn3d4xahx0r8d27+bq17t#35&=25y79%!v5g+8dz%dmf
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "port-0-online-repo-m4mn6khjc2c41aa0.sel4.cloudtype.app",
+    "*",
     # 추가 호스트
 ]
 
@@ -123,8 +123,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# 추가적인 정적 파일 디렉토리 (개발 환경에서 사용)
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
+# 정적 파일 URL
+STATIC_URL = '/static/'
 
 # Templates
 TEMPLATES[0]['DIRS'] = [BASE_DIR / 'weather_app/templates']
