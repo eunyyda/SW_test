@@ -28,11 +28,6 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['eunyyda.duckdns.org', 'localhost', '127.0.0.1']
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://port-0-online-repo-m4mn6khjc2c41aa0.sel4.cloudtype.app",
-    # 추가 origin
-]
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -121,7 +116,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # 추가적인 정적 파일 디렉토리 (개발 환경에서 사용)
 STATICFILES_DIRS = [
